@@ -30,7 +30,7 @@ const AllListings = (props) => {
 
         return (
             <div>
-                <Suggestions min={min} max={max} median={median} mean={mean} targetPrice={targetPrice}/>
+                <Suggestions query={ props.query } min={min} max={max} median={median} mean={mean} targetPrice={targetPrice}/>
                 {listings}
             </div>
         );

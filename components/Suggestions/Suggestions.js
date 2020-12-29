@@ -1,10 +1,11 @@
 import style from './Suggestions.module.scss';
 
-const Suggestions = ({ min, max, mean, median, targetPrice }) => {
+const Suggestions = ({ query, min, max, mean, median, targetPrice }) => {
     
     return (
         <div className={style.container}>
             <div>
+                <h2>Results for {query}:</h2>
                 <p>Average price: <span className={style.price}>${ mean }</span></p>
                 <p>Median Price: <span className={style.price}>${ median }</span></p>
                 <p>Lowest Offer: <span className={style.price}>${ min }</span></p>
