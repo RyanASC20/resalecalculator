@@ -2,25 +2,30 @@ import { useRouter } from 'next/router';
 import Listing from '../Listing/Listing';
 import Suggestions from '../Suggestions/Suggestions';
 
-const AllListings = (props) => {
-    const router = useRouter();
-
-    if (props.listings) {
-        let prices = [];
-        const listings = props.listings.map((e, i) => {
-            const title = e.title;
+const createListing = (e, i) => {
+    const title = e.title;
             const galleryURL = e.galleryURL[0];
             const viewItemURL = e.viewItemURL[0];
             const convertedCurrentPrice = e.sellingStatus[0].convertedCurrentPrice[0]['__value__'];
             let price;
             if (e.listingInfo[0].buyItNowAvailable[0] === 'true') price = e.listingInfo[0].buyItNowPrice[0]['__value__']
             else price = convertedCurrentPrice;
-            prices.push(parseFloat(price));
     
             const condition = e.condition ? e.condition[0].conditionDisplayName[0] : 'Unavailable';
     
     
-            return <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>
+            return [parseFloat(price), <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
+}
+
+const AllListings = (props) => {
+    const router = useRouter();
+
+    if (props.listings) {
+        let prices = [];
+        const listings = props.listings.map((e, i) => {
+            const [p, l] = createListing(e, i);
+            prices.push(p);
+            return l;
         });
         const min = Math.min(...prices);
         const max = Math.max(...prices);
