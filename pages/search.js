@@ -6,7 +6,7 @@ import HeadTag from '../components/HeadTag/HeadTag';
 const Search = ({data, currentQuery }) => {
     console.log(data.findItemsByKeywordsResponse[0].searchResult[0].item);
     try {
-        data = data.findItemsByKeywordsResponse[0];
+        // data = data.findItemsByKeywordsResponse[0];
         return (
             <div>
                 <HeadTag title={ currentQuery }/>
@@ -14,7 +14,7 @@ const Search = ({data, currentQuery }) => {
                 <div className="content">
                     <div>
                         <SearchBar />
-                        {/* <AllListings listings={ data.searchResult[0].item }/> */}
+                        <AllListings listings={ data.findItemsByKeywordsResponse[0].searchResult[0].item}/>
                         <h1>test</h1>
                     </div>
                 </div>
