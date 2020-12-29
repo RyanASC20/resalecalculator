@@ -3,7 +3,7 @@ import Head from 'next/head';
 const HeadTag = ({ title }) => {
     return (
         <Head>
-            <title>Resale Calculator | { title }</title>
+            <title>Resale Value Calculator | { title }</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="description" content="Calculator to determine the resale value of items and products. Resale Value Calculator uses listings from Ebay to determine the resale value of user-requested items."></meta>
             <link rel="preconnect" href="https://fonts.gstatic.com" />
