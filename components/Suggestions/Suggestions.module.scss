@@ -10,13 +10,14 @@
             display: block;
             color: black;
             font-size: 1.6em;
+            margin-bottom: 0.3em;
             &::before {
                 content: "$";
             }
         }
         
         @media(min-width: 1365px) {
-            width: 10%;
+            // width: 10%;
             padding: 1.5em 1em;
             font-size: 1em;
             border-right: 1px solid rgb(204, 204, 204);
