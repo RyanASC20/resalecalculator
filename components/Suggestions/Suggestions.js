@@ -5,7 +5,7 @@ const Suggestions = ({ query, min, max, mean, median, targetPrice }) => {
     const targetClass=`${style.metric} ${style['target-sub']}`;
     return (
         <div className={style.container}>
-            <h2>Results for "{query}"":</h2>
+            <h2>Results for "{query}":</h2>
             <div className={style['metrics-container']}>
                 <div className={targetClass}><span className={style.price}>{ targetPrice }</span>Target</div>
                 <div className={style.metric}><span className={style.price}>{ mean }</span>Average</div>
