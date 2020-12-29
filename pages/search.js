@@ -4,7 +4,7 @@ import SearchBar from '../components/Searchbar/Searchbar';
 import HeadTag from '../components/HeadTag/HeadTag';
 
 const Search = ({data, currentQuery }) => {
-    console.log(data)
+    data = data.findItemsByKeywordsResponse[0];
     return (
         <div>
             <HeadTag title={ currentQuery }/>
@@ -26,7 +26,7 @@ export async function getServerSideProps({query}) {
     );
     const data = await res.json()
     console.log(data);
-    return { props: { data: data.findItemsByKeywordsResponse[0], currentQuery } }
+    return { props: { data, currentQuery } }
 }
 
 
