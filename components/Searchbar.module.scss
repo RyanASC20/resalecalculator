@@ -1,0 +1,28 @@
+.form {
+    text-align: center;
+    margin: 1em 0;
+    .input, .button {
+        border: 1px solid lightgray;
+        padding: 0.8em;
+
+        &:focus {
+            border-color: lightblue;
+            outline: none;
+        }
+    }
+
+    .input {
+        border-radius: 16px 0px 0 16px;
+        width: 70%;
+    }
+
+    .button {
+        background: white;
+        border-radius: 0 16px 16px 0;
+    }
+
+    @media(min-width: 1365px) {
+        text-align: left;
+        width: 100%;
+    }
+}

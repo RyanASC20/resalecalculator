@@ -1,0 +1,16 @@
+.directions-container {
+    text-align: center;
+    .welcome-message {
+        margin: 0.5em 0;
+    }
+    .directions {
+        font-family: 'Source Sans Pro';
+        font-size: 1em;
+        font-weight: 400;
+        color: gray;
+    }
+
+    @media(min-width: 1365px) {
+        text-align: left;
+    }
+}

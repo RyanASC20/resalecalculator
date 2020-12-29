@@ -1,0 +1,50 @@
+$primaryBackground: whitesmoke;
+$headingFont: 'Playfair Display';
+$primaryFont: 'Source Sans Pro';
+$headingColor: rgb(32, 32, 34);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $primaryBackground;
+    font-family: $primaryFont;   
+    color: gray; 
+
+    h1, h2 {
+        font-family: $headingFont;
+        color: $headingColor;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    a {
+        text-decoration: none;
+        color: $headingColor;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        // margin: 1em;
+        .illustration {
+            width: 100%;
+        }
+
+        @media(min-width: 1365px) {
+            
+            flex-direction: row;
+            margin: 5em 15em;
+
+            .illustration {
+                width: 50%;
+            }
+        }
+    }
+}

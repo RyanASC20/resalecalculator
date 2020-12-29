@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    margin-bottom: 1em;
+    margin: 0 1em;
+    line-height: 1.5em;
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    .price {
+        color: rgb(76, 175, 200);
+    }
+    img {
+        width: 50%;
+    }
+
+    @media(min-width: 1365px) {
+        // justify-content: space-between;
+        font-size: 1.2em;
+        img {
+            max-height: 20vh;
+
+        }
+        // border: 1px solid black;
+    }
+}
