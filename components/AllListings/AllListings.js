@@ -24,7 +24,7 @@ const AllListings = (props) => {
         });
         const min = Math.min(...prices);
         const max = Math.max(...prices);
-        const median = prices[prices.length/ 2];
+        const median = prices[Math.floor(prices.length/ 2)];
         const mean = Math.floor(prices.reduce((a, e) => a + e) / prices.length * 100) / 100;
         const targetPrice = Math.floor((mean + median) * 100 / 2) / 100;
 

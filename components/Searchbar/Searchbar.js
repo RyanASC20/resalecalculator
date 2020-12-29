@@ -12,8 +12,8 @@ const SearchBar = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // window.location = `/search?query=${query}`;
-        router.push(`/search?query=${query}`);
+        if (query.length <= 1) router.push('/noResults');
+        else router.push(`/search?query=${query}`);
     }
 
     return (
