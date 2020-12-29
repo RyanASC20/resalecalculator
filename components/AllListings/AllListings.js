@@ -4,7 +4,6 @@ import Suggestions from '../Suggestions/Suggestions';
 
 
 const isCombo = (str) => {
-    // let omit = ['combo', 'bundle', 'plus', 'with', 'and', '+']
     const omit = ['combo', 'bundle', '+'];
     let combo;
     for (const o of omit) {
@@ -15,7 +14,6 @@ const isCombo = (str) => {
 
 
 const createListing = (e, i, combo) => {
-
 
     const title = e.title[0];
     if (!combo && isCombo(title)) return[null, null];
@@ -68,7 +66,7 @@ const AllListings = (props) => {
             </div>
         );
     } else {
-        router.push('/noResults');
+        router.push(`/noResults?query=${props.query}`);
         return null;
     }
 }
