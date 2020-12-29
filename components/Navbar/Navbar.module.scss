@@ -1,13 +1,16 @@
 .nav {
-    padding: 0.6em;
-    font-size: 0.8em;
-    color: white;
-    text-align: center;
+    padding: 1em;
+    font-size: 0.7em;
+    // text-align: center;
     background: #ffffff;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid rgb(212, 212, 212);;
     position: sticky;
     top: 0;
-
-    .to-home {
+    
+    #title {
+        display: inline-block;
+        padding-left: 1em;
+        font-weight: 900;
+        color: #78ad61;
     }
 }

@@ -1,9 +1,9 @@
-import styles from './Navbar.module.scss';
+import style from './Navbar.module.scss';
 
 const Navbar = () => {
     return (
-        <div className={styles.nav}>
-            <a href="/"><h1>Resale Value Calculator</h1></a>
+        <div className={style.nav}>
+            <a href="/"><h1 id={style.title}>Cycle</h1></a>
         </div>
     )
 }

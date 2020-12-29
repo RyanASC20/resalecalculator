@@ -1,8 +1,14 @@
 .container {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 1em;
-    margin: 0 1em;
     line-height: 1.5em;
+    color: gray;
+    padding: 1em;
+    border-radius: 16px;
+    background: ghostwhite;
+
+    border: 1px solid rgb(212, 212, 212);
 
     h2 {
         display: inline-block;
@@ -13,12 +19,13 @@
         color: rgb(76, 175, 200);
     }
     img {
-        width: 50%;
+        width: 20%;
     }
 
     @media(min-width: 1365px) {
-        // justify-content: space-between;
+        width: 80%;
         font-size: 1.2em;
+
         img {
             max-height: 20vh;
 

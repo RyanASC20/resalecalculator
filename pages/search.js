@@ -12,8 +12,7 @@ const Search = ({data, currentQuery, test }) => {
             <div className="content">
                 <div>
                     <SearchBar />
-                    <h1>{ test }</h1>
-                    {/* <AllListings listings={ data.searchResult[0].item }/> */}
+                    <AllListings listings={ data.searchResult[0].item }/>
                 </div>
             </div>
         </div>
@@ -26,7 +25,7 @@ export async function getServerSideProps({query}) {
     const res = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${process.env.EBAY_APP_ID}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${currentQuery}`, 
     );
     const data = await res.json()
-    return { props: { data, currentQuery, test: 'hello' } }
+    return { props: { data, currentQuery } }
 }
 
 

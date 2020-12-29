@@ -2,12 +2,14 @@
     text-align: center;
     .welcome-message {
         margin: 0.5em 0;
+        font-weight: 500;
     }
     .directions {
         font-family: 'Source Sans Pro';
         font-size: 1em;
         font-weight: 400;
-        color: gray;
+        color: rgb(158, 158, 158);
+        line-height: 2em;
     }
 
     @media(min-width: 1365px) {

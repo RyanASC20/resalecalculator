@@ -3,6 +3,7 @@
     margin: 1em 0;
 
     h2 {
+        font-weight: 500;
         margin-bottom: 1em;
     }
 
@@ -24,6 +25,13 @@
     .button {
         background: white;
         border-radius: 0 16px 16px 0;
+
+        &:hover {
+            color: white;
+            background-color: #6C63FF;
+            cursor: pointer;
+            transition: all 180ms;
+        }
     }
 
     @media(min-width: 1365px) {

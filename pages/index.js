@@ -9,7 +9,7 @@ const Index = () => {
             <HeadTag title="Home"/>
             <Navbar />
             <div className="content">
-                <div>
+                <div className="left">
                     <Directions />
                     <Searchbar />
                 </div>
