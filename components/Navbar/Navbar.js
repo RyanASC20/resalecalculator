@@ -3,7 +3,7 @@ import style from './Navbar.module.scss';
 const Navbar = () => {
     return (
         <div className={style.nav}>
-            <a href="/"><h1 id={style.title}>Cycle</h1></a>
+            <a href="/"><h1 id={style.title}><i class="material-icons">all_inclusive</i>Cycle</h1></a>
         </div>
     )
 }
