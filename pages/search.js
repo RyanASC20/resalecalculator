@@ -13,7 +13,6 @@ const Search = ({data, currentQuery }) => {
                     <div>
                         <SearchBar />
                         <AllListings query={ currentQuery } listings={ data.findItemsByKeywordsResponse[0].searchResult[0].item}/>
-                        <h1>test</h1>
                     </div>
                 </div>
             </div>
