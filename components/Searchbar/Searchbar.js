@@ -18,7 +18,7 @@ const SearchBar = (props) => {
 
     return (
         <div className={style.search}>
-            <h2>Search for an item to see its resale value!</h2>
+            <h1>Search for an item to see its resale value!</h1>
             <form name="search"  onSubmit={handleSubmit}>
                 <input className={style.input} type="text" placeholder="Search:" onChange={handleChange}></input>
                 <button className={style.button} type="submit">Submit</button>
