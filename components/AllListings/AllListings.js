@@ -4,17 +4,17 @@ import Suggestions from '../Suggestions/Suggestions';
 
 const createListing = (e, i) => {
     const title = e.title;
-            const galleryURL = e.galleryURL[0];
-            const viewItemURL = e.viewItemURL[0];
-            const convertedCurrentPrice = e.sellingStatus[0].convertedCurrentPrice[0]['__value__'];
-            let price;
-            if (e.listingInfo[0].buyItNowAvailable[0] === 'true') price = e.listingInfo[0].buyItNowPrice[0]['__value__']
-            else price = convertedCurrentPrice;
-    
-            const condition = e.condition ? e.condition[0].conditionDisplayName[0] : 'Unavailable';
-    
-    
-            return [parseFloat(price), <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
+    const galleryURL = e.galleryURL ? e.galleryURL[0]: 'Unavailable';
+    const viewItemURL = e.viewItemURL ? e.viewItemURL[0] : 'Unavailable';
+    const convertedCurrentPrice = e.sellingStatus[0].convertedCurrentPrice[0]['__value__'];
+    let price;
+    if (e.listingInfo[0].buyItNowAvailable[0] === 'true') price = e.listingInfo[0].buyItNowPrice[0]['__value__']
+    else price = convertedCurrentPrice;
+
+    const condition = e.condition ? e.condition[0].conditionDisplayName[0] : 'Unavailable';
+
+
+    return [parseFloat(price), <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
 }
 
 const calcTarget = (mean, median) => Math.round(((median * 0.8) + (mean * 0.2)) * 100) /100;
