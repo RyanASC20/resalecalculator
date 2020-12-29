@@ -25,6 +25,7 @@ export async function getServerSideProps({query}) {
     const res = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${process.env.EBAY_APP_ID}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${currentQuery}`, 
     );
     const data = await res.json()
+    console.log(data);
     return { props: { data: data.findItemsByKeywordsResponse[0], currentQuery } }
 }
 
