@@ -4,7 +4,8 @@ import Suggestions from '../Suggestions/Suggestions';
 
 
 const isCombo = (str) => {
-    let omit = ['combo', 'bundle', 'plus', 'with', 'and', '+']
+    // let omit = ['combo', 'bundle', 'plus', 'with', 'and', '+']
+    const omit = ['combo', 'bundle', '+'];
     let combo;
     for (const o of omit) {
         combo ||= str.toLowerCase().indexOf(o) != -1
