@@ -5,23 +5,29 @@
         text-align: center;
         border-bottom: 1px solid rgb(214, 214, 214);
         color: rgb(124, 124, 124);
+
+        .price {
+            display: block;
+            color: black;
+            font-size: 1.6em;
+            &::before {
+                content: "$";
+            }
+        }
         
         @media(min-width: 1365px) {
             width: 10%;
             padding: 1.5em 1em;
             font-size: 1em;
-            border-right: 1px solid rgb(214, 214, 214);
+            border-right: 1px solid rgb(204, 204, 204);
             border-bottom: none;
         }
     }
-    .price {
-        display: block;
-        color: black;
-        font-size: 1.6em;
-        &::before {
-            content: "$";
-        }
+
+    .target-sub {
+        color: #78AD61;
     }
+    
     @media(min-width: 1365px) {
         .metrics-container {
             display: flex;
