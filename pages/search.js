@@ -3,20 +3,26 @@ import AllListings from '../components/AllListings/AllListings';
 import SearchBar from '../components/Searchbar/Searchbar';
 import HeadTag from '../components/HeadTag/HeadTag';
 
-const Search = ({data, currentQuery, test }) => {
-    data = data.findItemsByKeywordsResponse[0];
-    return (
-        <div>
-            <HeadTag title={ currentQuery }/>
-            <Navbar />
-            <div className="content">
-                <div>
-                    <SearchBar />
-                    <AllListings listings={ data.searchResult[0].item }/>
+const Search = ({data, currentQuery }) => {
+    try {
+        data = data.findItemsByKeywordsResponse[0];
+        return (
+            <div>
+                <HeadTag title={ currentQuery }/>
+                <Navbar />
+                <div className="content">
+                    <div>
+                        <SearchBar />
+                        <AllListings listings={ data.searchResult[0].item }/>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    } catch {
+        console.log(data);
+        return null;
+    }
+    
 }
 
 
