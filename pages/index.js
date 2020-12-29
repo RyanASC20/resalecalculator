@@ -1,12 +1,12 @@
-import Navbar from '../components/Navbar';
-import Directions from '../components/Directions';
-import Searchbar from '../components/Searchbar';
-import HeadTag from '../components/Head';
+import Navbar from '../components/Navbar/Navbar';
+import Directions from '../components/Directions/Directions';
+import Searchbar from '../components/Searchbar/Searchbar';
+import HeadTag from '../components/HeadTag/HeadTag';
 
 const Index = () => {
     return (
         <div>
-            <HeadTag />
+            <HeadTag title="Home"/>
             <Navbar />
             <div className="content">
                 <div>

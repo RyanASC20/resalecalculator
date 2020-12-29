@@ -1,12 +1,12 @@
-import Navbar from '../components/Navbar';
-import AllListings from '../components/AllListings';
-import SearchBar from '../components/Searchbar';
-import HeadTag from '../components/Head';
+import Navbar from '../components/Navbar/Navbar';
+import AllListings from '../components/AllListings/AllListings';
+import SearchBar from '../components/Searchbar/Searchbar';
+import HeadTag from '../components/HeadTag/HeadTag';
 
-const Search = ({data}) => {
+const Search = ({data, currentQuery }) => {
     return (
         <div>
-            <HeadTag />
+            <HeadTag title={ currentQuery }/>
             <Navbar />
             <div className="content">
                 <div>
@@ -24,7 +24,7 @@ export async function getServerSideProps({query}) {
     const res = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${process.env.EBAY_APP_ID}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${currentQuery}`, 
     );
     const data = await res.json()
-    return { props: { data: data.findItemsByKeywordsResponse[0] } }
+    return { props: { data: data.findItemsByKeywordsResponse[0], currentQuery } }
 }
 
 

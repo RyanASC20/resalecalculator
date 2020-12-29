@@ -1,6 +1,11 @@
-.form {
+.search {
     text-align: center;
     margin: 1em 0;
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
     .input, .button {
         border: 1px solid lightgray;
         padding: 0.8em;
