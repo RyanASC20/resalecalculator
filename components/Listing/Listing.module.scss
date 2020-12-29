@@ -1,6 +1,7 @@
 .item {
     background: white;
     color: gray;
+    margin: 0.5em 0;
     padding: 0.7em;
     // margin: 0.4em 0;
     // border-radius: 5px;
@@ -40,7 +41,7 @@
     }
 
     &:hover {
-        background: rgb(233, 233, 233);
         transition: all 100ms;
+        box-shadow: 0 2px 5px rgb(190, 190, 190);
     }
 }
