@@ -4,9 +4,9 @@ import SearchBar from '../components/Searchbar/Searchbar';
 import HeadTag from '../components/HeadTag/HeadTag';
 
 const Search = ({data, currentQuery }) => {
-    console.log(data)
+    console.log(data.findItemsByKeywordsResponse[0]);
     try {
-        // data = data.findItemsByKeywordsResponse[0];
+        data = data.findItemsByKeywordsResponse[0];
         return (
             <div>
                 <HeadTag title={ currentQuery }/>
