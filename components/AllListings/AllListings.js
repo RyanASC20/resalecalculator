@@ -17,6 +17,8 @@ const createListing = (e, i) => {
             return [parseFloat(price), <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
 }
 
+const calcTarget = (mean, median) => Math.round(((median * 0.8) + (mean * 0.2)) * 100) /100;
+
 const AllListings = (props) => {
     const router = useRouter();
 
@@ -31,11 +33,12 @@ const AllListings = (props) => {
         const max = Math.max(...prices);
         const median = prices[Math.floor(prices.length/ 2)];
         const mean = Math.floor(prices.reduce((a, e) => a + e) / prices.length * 100) / 100;
-        const targetPrice = Math.floor((mean + median) * 100 / 2) / 100;
+        const targetPrice = calcTarget(mean, median);
 
         return (
             <div>
                 <Suggestions query={ props.query } min={min} max={max} median={median} mean={mean} targetPrice={targetPrice}/>
+                <h2>Ebay Listings Used:</h2>
                 {listings}
             </div>
         );
