@@ -32,6 +32,10 @@
         .metrics-container {
             display: flex;
             margin: 0.5em 0;
+
+            .metric {
+                min-width: 10%;
+            }
         }
         .drawing {
             width: 8%;

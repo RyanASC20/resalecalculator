@@ -28,44 +28,32 @@ const createListing = (e, i, combo) => {
     const condition = e.condition ? e.condition[0].conditionDisplayName[0] : 'Unavailable';
 
 
-    return [parseFloat(price), <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
-}
-
-
-const calcTarget = (mean, median, min) => Math.round(((median * 0.7) + (mean * 0.3)) * 100) /100;
-// const calcTarget = (mean, median, min, topListing) => Math.round((mean - Math.abs(topListing - ((median * 0.8) + (mean * 0.1) + (min * 0.1)))) * 100) /100;
-
-
-
-const getGeneralData = (prices) => {
-    const topListing = prices[0];
-    const min = Math.min(...prices);
-    const max = Math.max(...prices);
-    const median = prices.sort()[Math.floor(prices.length/ 2)];
-    const mean = Math.floor(prices.reduce((a, e) => a + e) / prices.length * 100) / 100;
-    const targetPrice = calcTarget(mean, median, min, topListing);
-    return [min, max, median, mean, targetPrice];
+    return [parseFloat(price), condition, <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
 }
 
 
 
 const AllListings = (props) => {
+
+    const MAX_NUM_LISTINGS = 25
     const router = useRouter();
 
     if (props.listings) {
-        let allPrices = [];
+        let pricesByCondition = {}
         let combo = isCombo(props.query);
-        const listings = props.listings.slice(0, 11).map((e, i) => {
-            const [p, l] = createListing(e, i, combo);
-            if (p != null) allPrices.push(p);
+        const listings = props.listings.slice(0, MAX_NUM_LISTINGS).map((e, i) => {
+            const [p, c, l] = createListing(e, i, combo);
+            if (p != null) {
+                if (pricesByCondition[c]) pricesByCondition[c].push(p);
+                else pricesByCondition[c] = [p];
+            }
             return l;
         });
         
-        const [min, max, median, mean, targetPrice] = getGeneralData(allPrices);
 
         return (
             <div>
-                <Suggestions query={ props.query } min={min} max={max} median={median} mean={mean} targetPrice={targetPrice}/>
+                <Suggestions query={ props.query } pricesByCondition={pricesByCondition}/>
                 <h2>Ebay Listings Used:</h2>
                 {listings}
             </div>

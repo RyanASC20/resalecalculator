@@ -17,7 +17,8 @@ const Search = ({data, currentQuery }) => {
                 </div>
             </div>
         )
-    } catch {
+    } catch(err) {
+        console.log(err);
         console.log(data);
         return null;
     }
