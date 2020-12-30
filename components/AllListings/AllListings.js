@@ -32,15 +32,18 @@ const createListing = (e, i, combo) => {
 }
 
 
-const calcTarget = (mean, median, min) => Math.round(((median * 0.8) + (mean * 0.1) + (min * 0.1)) * 100) /100;
+// const calcTarget = (mean, median, min) => Math.round(((median * 0.8) + (mean * 0.1) + (min * 0.1)) * 100) /100;
+const calcTarget = (mean, median, min, topListing) => Math.round((mean - Math.abs(topListing - ((median * 0.8) + (mean * 0.1) + (min * 0.1)))) * 100) /100;
+
 
 
 const getGeneralData = (prices) => {
+    const topListing = prices[0];
     const min = Math.min(...prices);
     const max = Math.max(...prices);
     const median = prices.sort()[Math.floor(prices.length/ 2)];
     const mean = Math.floor(prices.reduce((a, e) => a + e) / prices.length * 100) / 100;
-    const targetPrice = calcTarget(mean, median, min);
+    const targetPrice = calcTarget(mean, median, min, topListing);
     return [min, max, median, mean, targetPrice];
 }
 
