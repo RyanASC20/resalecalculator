@@ -32,7 +32,7 @@ const createListing = (e, i, combo) => {
 }
 
 
-const calcTarget = (mean, median, min) => Math.round(((median * 0.8) + (mean * 0.1) + (min * 0.1)) * 100) /100;
+const calcTarget = (mean, median, min) => Math.round(((median * 0.8) + (mean * 0.1)) * 100) /100;
 // const calcTarget = (mean, median, min, topListing) => Math.round((mean - Math.abs(topListing - ((median * 0.8) + (mean * 0.1) + (min * 0.1)))) * 100) /100;
 
 
