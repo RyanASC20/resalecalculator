@@ -6,7 +6,7 @@ import HeadTag from '../components/HeadTag/HeadTag';
 const Index = () => {
     return (
         <div>
-            <HeadTag title="Get Approximate Resale Target Price for Used Items - Cycle"/>
+            <HeadTag title="What's My Used Product Worth?"/>
             <Navbar />
             <div className="content">
                 <div className="left">
