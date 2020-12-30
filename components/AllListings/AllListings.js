@@ -31,18 +31,20 @@ const createListing = (e, i, combo) => {
     return [parseFloat(price), <Listing key={i} title={title} galleryURL={galleryURL} viewItemURL={viewItemURL} convertedCurrentPrice={price} condition={condition}/>];
 }
 
+
+const calcTarget = (mean, median, min) => Math.round(((median * 0.6) + (mean * 0.3) + (min + 0.1)) * 100) /100;
+
+
 const getGeneralData = (prices) => {
     const min = Math.min(...prices);
     const max = Math.max(...prices);
     const median = prices.sort()[Math.floor(prices.length/ 2)];
     const mean = Math.floor(prices.reduce((a, e) => a + e) / prices.length * 100) / 100;
-    const targetPrice = calcTarget(mean, median);
+    const targetPrice = calcTarget(mean, median, min);
     return [min, max, median, mean, targetPrice];
 }
 
 
-
-const calcTarget = (mean, median) => Math.round(((median * 0.8) + (mean * 0.2)) * 100) /100;
 
 const AllListings = (props) => {
     const router = useRouter();
