@@ -7,7 +7,6 @@ const calcTarget = (mean, median, min) => Math.round(((median * 0.7) + (mean * 0
 const allData = (pricesByCondition) => {
     let prices = [];
     for (const i of Object.values(pricesByCondition)) prices = [...prices, ...i];
-    console.log(prices);
     return prices;
 }
 
