@@ -3,4 +3,3 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-1JBDZ9X1YY');
-setGALOAD(false);
