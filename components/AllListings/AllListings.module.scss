@@ -1,0 +1,11 @@
+.container {
+    @media(min-width: 1365px) {
+        display: flex;
+        justify-content: space-between;
+        // border: 1px solid black;
+
+        .listings {
+            width: 50%;
+        }
+    }
+}

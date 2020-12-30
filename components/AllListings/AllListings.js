@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Listing from '../Listing/Listing';
 import Suggestions from '../Suggestions/Suggestions';
+import style from './AllListings.module.scss';
 
 
 const isCombo = (str) => {
@@ -52,10 +53,12 @@ const AllListings = (props) => {
         
 
         return (
-            <div>
+            <div className={style.container}>
                 <Suggestions query={ props.query } pricesByCondition={pricesByCondition}/>
-                <h2>Ebay Listings Used:</h2>
-                {listings}
+                <div className={style.listings}>
+                    <h2>Ebay Listings Used:</h2>
+                    {listings}
+                </div>
             </div>
         );
     } else {
