@@ -3,7 +3,7 @@ import Head from 'next/head';
 const HeadTag = ({ title }) => {
     return (
         <Head>
-            <title>{ title } Free Ebay Resale Value Calculator | Cycle</title>
+            <title>{ title } | Free Ebay Resale Value Calculator | Cycle</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="description" content="The Cycle resale value calculator instantly reports the value of the item you want to sell on Ebay based on prices of other Ebay for-sale listings."></meta>
             <link rel="preconnect" href="https://fonts.gstatic.com" />
