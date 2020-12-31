@@ -1,19 +1,23 @@
-import { useState } from 'react';
-import { Router, useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import style from './Searchbar.module.scss';
 
 const SearchBar = (props) => {
     const [query, setQuery] = useState('');
+    const [isLoading, setLoading] = useState(false);
     const router = useRouter();
 
-    const handleChange = (e) => {
+
+    const handleChange = e => {
         setQuery(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
-        if (query.length <= 1) router.push('/noResults');
-        else router.push(`/search?query=${query}`);
+        if (query.length <= 1) router.push(`/noResults?query=${query}`);
+        else {
+            router.push(`/search?query=${query}`);
+        }
     }
 
     return (
@@ -22,6 +26,7 @@ const SearchBar = (props) => {
             <form name="search"  onSubmit={handleSubmit}>
                 <input className={style.input} type="text" placeholder="Search:" onChange={handleChange}></input>
                 <button className={style.button} type="submit">Submit</button>
+                {isLoading && <div className={ style.loader }></div> }
             </form>
         </div>
     )

@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import AllListings from '../components/AllListings/AllListings';
 import SearchBar from '../components/Searchbar/Searchbar';
 import HeadTag from '../components/HeadTag/HeadTag';
 
-const Search = ({data, currentQuery }) => {
+
+
+
+const Search = ({ data, currentQuery }) => {
+
     try {
         return (
             <div>
@@ -12,14 +17,13 @@ const Search = ({data, currentQuery }) => {
                 <div className="content">
                     <div>
                         <SearchBar />
-                        <AllListings query={ currentQuery } listings={ data.findItemsByKeywordsResponse[0].searchResult[0].item}/>
+                        <AllListings query={ currentQuery } listings={ data.findItemsByKeywordsResponse[0].searchResult[0].item }/>
                     </div>
                 </div>
             </div>
         )
     } catch(err) {
         console.log(err);
-        console.log(data);
         return null;
     }
     
