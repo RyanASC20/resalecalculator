@@ -13,7 +13,7 @@ const HeadTag = ({ title }) => {
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"></link>
             <link rel="icon" href="/undraw_wallet.svg"></link>
 
-            <title>{ title } | Free Ebay Resale Value Calculator | Cycle</title>
+            <title>Resale Value Calculator | Calculate the Price of Used Items - Cycle</title>
         </Head>
     );
 }
