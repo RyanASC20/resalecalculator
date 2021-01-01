@@ -9,6 +9,7 @@ const Directions = () => {
                 or a potential selling price if you are selling!
                 The target resale price is an estimated desirable pricepoint where your item is likely to be purchased. It is calculated using
                 the top 10 Ebay listings of items matching the keywords that were searched for.
+                Disclaimer: Displayed target prices should not be solely relied on to determine prices and should be used as a <b>reference</b>.
             </h2>
         </div>
     )
