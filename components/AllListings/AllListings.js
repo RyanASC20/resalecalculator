@@ -35,7 +35,6 @@ const createListing = (e, i, combo) => {
 
 
 const AllListings = (props) => {
-    console.log("ALL LISTINGS RENDERING");
 
     const MAX_NUM_LISTINGS = 25
     const router = useRouter();
