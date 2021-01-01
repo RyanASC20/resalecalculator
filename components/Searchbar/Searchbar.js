@@ -16,7 +16,7 @@ const SearchBar = (props) => {
         e.preventDefault();
         if (query.length <= 1) router.push(`/noResults?query=${query}`);
         else {
-            router.push(`/search?query=${query}`);
+            router.push(`/resale-value-calculator-search?query=${query}`);
         }
     }
 
